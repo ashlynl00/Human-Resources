@@ -40,7 +40,7 @@ router.post('/', async (req, res)=>{
     req.body.user = req.session.userId
     const newEmployee = await Employee.create(req.body);
     console.log(newEmployee)
-    res.redirect('/employee')
+    res.redirect('/employees')
 })
 
 // EDIT: GET
@@ -74,7 +74,7 @@ router.put('/:id', async (req, res)=>{
 router.delete('/:id', async (req, res)=>{
     try{
         await Employee.findByIdAndDelete(req.params.id)
-        res.redirect('/cats')
+        res.redirect('/employees')
     }catch(err){
         res.sendStatus(500)
     }

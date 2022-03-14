@@ -7,12 +7,15 @@
     <title>Document</title>
 </head>
 <body>
-    <h1><%= employee.name %></h1>
+    <h1>Name:<%= employee.name %></h1>
     <h3>Created by: <%= employee.user.username %></h3>
-    <p><%= employee.age %> years old</p>
+    <p>Age: <%= employee.age %></p>
+    <p>Salary: <%= employee.salary %></p>
+    <p>Role: <%= employee.role %></p>
     <a href="/employees/<%=employee._id%>/edit"><button>Edit</button></a>
     <form action="/employees/<%= employee._id %>?_method=DELETE" method="post">
         <button type="submit">Delete <%= employee.name %>?</button>
     </form>
+    <a href="/employees"><button>Go back to list of employees</button></a>
 </body>
 </html>
