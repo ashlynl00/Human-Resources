@@ -42,7 +42,8 @@ router.get('/logout', (req, res)=>{
 //display all users 
 router.get('/', async (req, res)=>{
     const employees = await Employee.find();
-    let userCompany = await User.companyID;
+    //get the current user's company
+    let userCompany = res.locals.companyID;
     const users = await User.find({companyID: userCompany});
     console.log(users);
     res.render('users/index.ejs', {
