@@ -12,6 +12,7 @@
         <h2>There are no employees yet!</h2>
     <% } else { %> 
     <ul class="employees">
+        <h1>Employee List</h1>
         <% employees.forEach((employee)=>{ %>
             <% if(employee.user == userId){ %>
                 <li><a href="/employees/<%=employee._id%>"><%= employee.name %></a>: <%=employee.role%></li>
