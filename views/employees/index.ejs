@@ -17,10 +17,12 @@
     <ul class="employees">
         <% employees.forEach((employee)=>{ %>
             <% if(employee.user == userId){ %>
-                <li><a href="/employees/<%=employee._id%>"><%= employee.name %></a> is <%=employee.age%> years old</li>
+                <li><a href="/employees/<%=employee._id%>"><%= employee.name %></a>: <%=employee.role%></li>
             <% } %>
         <% }) %>
     </ul>
+    <a href="/employees/new"><button>Create a new employee</button></a>
+    <a href="/"><button>Back to home</button></a>
     <% } %>
 </body>
 </html>
