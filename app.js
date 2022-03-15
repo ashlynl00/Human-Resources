@@ -9,14 +9,16 @@ const store = new MongoDBStore({
   uri: process.env.MONGO_URI,
   collection: "mySessions",
 });
-require("./db-utils/connect");
-const catController = require("./controllers/employeeController");
-const userController = require("./controllers/userController");
-app.use(express.static("public"));
-app.use(methodOverride("_method"));
-app.use(require("./middleware/logger"));
-const isLoggedIn = require("./middleware/isLoggedIn");
-app.use(express.urlencoded({ extended: true }));
+
+require('./db-utils/connect')
+const employeeController = require('./controllers/employeeController')
+const userController = require('./controllers/userController')
+app.use(express.static("public"))
+app.use(methodOverride('_method'))
+app.use(require('./middleware/logger'))
+const isLoggedIn = require('./middleware/isLoggedIn')
+app.use(express.urlencoded({extended: true}));
+
 app.use(express.json());
 app.use(
   session({
@@ -24,23 +26,25 @@ app.use(
     resave: false,
     saveUninitialized: false,
     store: store,
-  })
-);
-app.use(async (req, res, next) => {
-  // This will send info from session to templates
-  res.locals.isLoggedIn = req.session.isLoggedIn;
-  if (req.session.isLoggedIn) {
-    const currentUser = await User.findById(req.session.userId);
-    res.locals.username = currentUser.username;
-    res.locals.userId = req.session.userId.toString();
-  }
-  next();
-});
-app.get("/", (req, res) => {
-  res.render("home.ejs");
-});
-app.use("/employees", isLoggedIn, catController);
-app.use("/users", userController);
+
+}))
+app.use(async (req, res, next)=>{
+    // This will send info from session to templates
+    res.locals.isLoggedIn = req.session.isLoggedIn
+    if(req.session.isLoggedIn){
+        const currentUser = await User.findById(req.session.userId)
+        res.locals.username = currentUser.username
+        res.locals.userId = req.session.userId.toString()
+        res.locals.companyID = currentUser.companyID;
+    }
+    next()
+})
+app.get('/', (req, res)=>{
+    res.render("home.ejs")
+})
+app.use('/employees', isLoggedIn, employeeController)
+app.use('/users', userController)
+
 
 app.use(express.static("public"));
 

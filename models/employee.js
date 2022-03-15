@@ -6,7 +6,8 @@ const employeeSchema = new Schema({
     role: {type:String, required: true},
     salary: {type:Number, required:true},
     age: {type:Number, required:true},
-    user: {type: Schema.Types.ObjectId, ref: 'User'}
+    user: {type: Schema.Types.ObjectId, ref: 'User'},
+    companyID: {type: Number, required: true}
 }, {timestamps: true})
 
 const Employee = mongoose.model('Employee', employeeSchema);
