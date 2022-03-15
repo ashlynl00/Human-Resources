@@ -1,4 +1,5 @@
 const Employee = require("../models/employee")
+const User = require('../models/user');
 const express = require('express');
 const router = express.Router();
 // INDEX: GET
@@ -10,17 +11,25 @@ router.get('/', async (req, res)=>{
     }else{
         req.session.visits += 1
     }
-    const employees = await Employee.find();
-    // Demo that res.locals is the same as the object passed to render
-    res.locals.visits = req.session.visits;
-    res.locals.employees = employees;
-    res.render('employees/index.ejs')
+    if (User.companyID == Employee.companyID) {
+        let employeeCompanyId = res.locals.companyID;
+        console.log(res.locals);
+        const employees = await Employee.find({companyID: employeeCompanyId});
+        console.log(employees);
+        // Demo that res.locals is the same as the object passed to render
+        res.locals.visits = req.session.visits;
+        res.locals.employees = employees;
+        res.render('employees/index.ejs')
+    }
 })
 // NEW: GET
 // /cats/new
 // Shows a form to create a new cat
-router.get('/new', (req, res)=>{
-    res.render('employees/new.ejs')
+router.get('/new', async (req, res)=>{
+    const currentUser = await User.findById(req.session.userId)
+    res.render('employees/new.ejs', {
+        currentUser: currentUser
+    })
 })
 
 // SHOW: GET

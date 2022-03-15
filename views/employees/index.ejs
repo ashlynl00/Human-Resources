@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="/style.css">
 </head>
 <body>
+<<<<<<< HEAD
     <%- include ('../partials/samNavbar.ejs') %>
 
     <div class="container">
@@ -36,5 +37,21 @@
 
     
     
+=======
+    
+    <% if(employees.length === 0) {%>
+        <h2>There are no employees yet!</h2>
+    <% } else { %> 
+    <ul class="employees">
+        <% employees.forEach((employee)=>{ %>
+            <% if(employee.user == userId){ %>
+                <li><a href="/employees/<%=employee._id%>"><%= employee.name %></a>: <%=employee.role%></li>
+            <% } %>
+        <% }) %>
+    </ul>
+    <% } %>
+    <a href="/employees/new"><button>Create a new employee</button></a>
+    <a href="/"><button>Back to home</button></a>
+>>>>>>> main
 </body>
 </html>
