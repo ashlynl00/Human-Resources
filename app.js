@@ -40,6 +40,11 @@ app.get('/', (req, res)=>{
 app.use('/employees', isLoggedIn, catController)
 app.use('/users', userController)
 
+
+// const path = require("public")
+app.use(express.static("public"))
+
+
 const port = process.env.PORT || 3000
 app.listen(port, ()=>{
     console.log('app running')

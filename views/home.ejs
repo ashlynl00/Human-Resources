@@ -8,14 +8,25 @@
     <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
-    <% if(isLoggedIn){ %>
-        <h1>Welcome back <%= username %>!</h1>
-        <a href="/users/logout"><button>Click here to log out</button></a>
-        <a href="/employees"><button>Click here to view employees</button></a>
-        <a href="/employees/new"><button>Click here to create a new employee</button></a>
-    <% } else { %>
-        <a href="/users/login">Please log in</a>
-        <a href="/users/new"><button>Create an account</button></a>
-    <% } %>
+    <%- include ('partials/samNavbar.ejs') %>
+    <div class="container">
+        <section class="column-center">
+            <div class="centerbox">
+                <% if(isLoggedIn){ %>
+                    <h1>Welcome back <%= username %>!</h1>
+                    <a href="/users/logout"><button>Click here to log out</button></a>
+                    <a href="/employees"><button>Click here to view employees</button></a>
+                    <a href="/employees/new"><button>Click here to create a new employee</button></a>
+                <% } else { %>
+                    <a href="/users/login">Please log in</a>
+                    <a href="/users/new"><button>Create an account</button></a>
+                <% } %>
+            </div>
+        </section>
+    </div>
+
+
+
+    
 </body>
 </html>

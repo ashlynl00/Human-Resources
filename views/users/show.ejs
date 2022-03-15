@@ -7,7 +7,19 @@
     <title>Document</title>
 </head>
 <body>
-    <h1><%=user.username%> Account</h1>
-    <a href="/users/logout"><button>Logout</button></a>
+    <%- include ('../partials/samNavbar.ejs') %>
+
+    <div class="container">
+        <section class="column-center">
+            <div class="centerbox">
+                <h1><%=user.username%> Account</h1>
+                <a href="/users/logout"><button>Logout</button></a>
+               
+            </div>
+        </section>
+    </div>
+
+
+    
 </body>
 </html>

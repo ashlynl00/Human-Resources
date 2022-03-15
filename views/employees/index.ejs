@@ -5,24 +5,36 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="/style.css">
 </head>
 <body>
-    
-    <% if(employees.length === 0) {%>
-        <h2>There are no employees yet!</h2>
-        <a href="/employees/new">Create one now!</a>
-        <a href="/employees/edit">Edit one now!</a>
+    <%- include ('../partials/samNavbar.ejs') %>
 
-    <% } else { %> 
-    <ul class="employees">
-        <% employees.forEach((employee)=>{ %>
-            <% if(employee.user == userId){ %>
-                <li><a href="/employees/<%=employee._id%>"><%= employee.name %></a>: <%=employee.role%></li>
-            <% } %>
-        <% }) %>
-    </ul>
-    <a href="/employees/new"><button>Create a new employee</button></a>
-    <a href="/"><button>Back to home</button></a>
-    <% } %>
+    <div class="container">
+        <section class="column-center">
+            <div class="centerbox">
+                <% if(employees.length === 0) {%>
+                    <h2>There are no employees yet!</h2>
+                    <a href="/employees/new">Create one now!</a>
+                    <a href="/employees/edit">Edit one now!</a>
+            
+                <% } else { %> 
+                <ul class="employees">
+                    <% employees.forEach((employee)=>{ %>
+                        <% if(employee.user == userId){ %>
+                            <li><a href="/employees/<%=employee._id%>"><%= employee.name %></a>: <%=employee.role%></li>
+                        <% } %>
+                    <% }) %>
+                </ul>
+                <a href="/employees/new"><button>Create a new employee</button></a>
+                <a href="/"><button>Back to home</button></a>
+                <% } %>
+               
+            </div>
+        </section>
+    </div>
+
+    
+    
 </body>
 </html>

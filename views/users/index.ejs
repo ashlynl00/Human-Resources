@@ -7,13 +7,25 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>Here are all the users of this fine application</h1>
-    <form action="/users">
-        <input type="text" name="username">
-        <button type="submit">Search for users</button>
-    </form>
-    <% users.forEach((user)=>{ %>
-        <a href="/users/<%=user._id%>"><%= user.username %></a>
-    <% }) %>
+    <%- include ('../partials/samNavbar.ejs') %>
+
+    <div class="container">
+        <section class="column-center">
+            <div class="centerbox">
+                <h1>Here are all the users of this fine application</h1>
+                <form action="/users">
+                    <input type="text" name="username">
+                    <button type="submit">Search for users</button>
+                </form>
+                <% users.forEach((user)=>{ %>
+                <a href="/users/<%=user._id%>"><%= user.username %></a>
+                <% }) %>
+               
+            </div>
+        </section>
+    </div>
+
+
+    
 </body>
 </html>
