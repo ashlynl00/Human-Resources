@@ -20,13 +20,14 @@ router.post("/login", async (req, res)=>{
                 // It's a match! Successful login!
                 req.session.isLoggedIn = true;
                 req.session.userId = possibleUser._id;
-                res.redirect("/employees")
+                // redirect to home page
+                res.redirect("/")
             }else{
-                res.redirect("/employees/login")
+                res.redirect("/users/login")
             }
         }else{
             // Let them try again?
-            res.redirect("/employees/login")
+            res.redirect("/users/login")
         }
     }catch(err){
         console.log(err);
@@ -38,10 +39,14 @@ router.get('/logout', (req, res)=>{
         res.redirect("/")
     })
 })
+//display all users 
 router.get('/', async (req, res)=>{
     const employees = await Employee.find();
-    res.render('employees/index.ejs', {
-        employees: employees
+    let userCompany = await User.companyID;
+    const users = await User.find({companyID: userCompany});
+    console.log(users);
+    res.render('users/index.ejs', {
+        users: users
     })
 })
 // NEW: GET
@@ -72,7 +77,7 @@ router.post('/', async (req, res)=>{
     req.body.password = hashedPassword
     const newUser = await User.create(req.body);
     console.log(newUser)
-    res.redirect('/users')
+    res.redirect('/users/login')
 })
 
 // EDIT: GET

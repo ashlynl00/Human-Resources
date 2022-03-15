@@ -10,7 +10,7 @@ const store = new MongoDBStore({
     collection: 'mySessions'
 });
 require('./db-utils/connect')
-const catController = require('./controllers/employeeController')
+const employeeController = require('./controllers/employeeController')
 const userController = require('./controllers/userController')
 app.use(express.static("public"))
 app.use(methodOverride('_method'))
@@ -31,13 +31,14 @@ app.use(async (req, res, next)=>{
         const currentUser = await User.findById(req.session.userId)
         res.locals.username = currentUser.username
         res.locals.userId = req.session.userId.toString()
+        res.locals.companyID = currentUser.companyID;
     }
     next()
 })
 app.get('/', (req, res)=>{
     res.render("home.ejs")
 })
-app.use('/employees', isLoggedIn, catController)
+app.use('/employees', isLoggedIn, employeeController)
 app.use('/users', userController)
 
 const port = process.env.PORT || 3000
