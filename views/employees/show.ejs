@@ -1,21 +1,24 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/style.css/" />
     <title>Document</title>
-</head>
-<body>
-    <h1>Name:<%= employee.name %></h1>
-    <h3>Created by: <%= employee.user.username %></h3>
-    <p>Age: <%= employee.age %></p>
-    <p>Salary: <%= employee.salary %></p>
-    <p>Role: <%= employee.role %></p>
-    <a href="/employees/<%=employee._id%>/edit"><button>Edit</button></a>
-    <form action="/employees/<%= employee._id %>?_method=DELETE" method="post">
-        <button type="submit">Delete <%= employee.name %>?</button>
-    </form>
-    <a href="/employees"><button>Go back to list of employees</button></a>
-</body>
-</html>
+  </head>
+  <body> -->
+<%- include("../partials/nav") %>
+<h1>Name:<%= employee.name %></h1>
+<h3>Created by: <%= employee.user.username %></h3>
+<p>Age: <%= employee.age %></p>
+<p>Salary: <%= employee.salary %></p>
+<p>Role: <%= employee.role %></p>
+<a href="/employees/<%=employee._id%>/edit"><button>Edit</button></a>
+<form action="/employees/<%= employee._id %>?_method=DELETE" method="post">
+  <button type="submit">Delete <%= employee.name %>?</button>
+</form>
+<a href="/employees"><button>Go back to list of employees</button></a>
+<%- include("../partials/nav") %>
+<!-- </body>
+</html> -->

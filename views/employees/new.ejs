@@ -1,21 +1,23 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/style.css/" />
     <title>Document</title>
-</head>
-<body>
-    <h1>Employee FACTORY</h1>
-    <form action="/employees" method="post">
-        Name: <input type="text" name="name">
-        Age: <input type="number" name="age">
-        Role: <input type="text" name="role">
-        Salary: <input type="number" name="salary">
-        Company ID: <input type="number" name="companyID" value="<%=currentUser.companyID%>">
-        <button type="submit">Submit</button>
-    </form>
-    <a href="/employees"><button>Go back to list of employees</button></a>
-</body>
-</html>
+
+  </head>
+  <body> -->
+<%- include("../partials/nav") %>
+<h1>Employee FACTORY</h1>
+<form action="/employees" method="post">
+  Name: <input type="text" name="name" /> Age:
+  <input type="number" name="age" /> Role:
+  <input type="text" name="role" /> Salary:
+  <input type="number" name="salary" />
+  <button type="submit">Submit</button>
+</form>
+<%- include("../partials/nav") %>
+<!-- </body>
+</html> -->

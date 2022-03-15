@@ -1,26 +1,31 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/style.css/" />
     <title>Document</title>
-</head>
-<body>
-    
-    <% if(employees.length === 0) {%>
-        <h2>There are no employees yet!</h2>
-    <% } else { %> 
-    <ul class="employees">
-        <h1>Employee List</h1>
-        <% employees.forEach((employee)=>{ %>
-            <% if(employee.user == userId){ %>
-                <li><a href="/employees/<%=employee._id%>"><%= employee.name %></a>: <%=employee.role%></li>
-            <% } %>
-        <% }) %>
-    </ul>
-    <% } %>
-    <a href="/employees/new"><button>Create a new employee</button></a>
-    <a href="/"><button>Back to home</button></a>
-</body>
-</html>
+
+  </head>
+  <body> -->
+<%- include("../partials/nav") %> <% if(employees.length === 0) {%>
+<h2>There are no employees yet!</h2>
+<a href="/employees/new">Create one now!</a>
+<a href="/employees/edit">Edit one now!</a>
+
+<% } else { %>
+<ul class="employees">
+  <% employees.forEach((employee)=>{ %> <% if(employee.user == userId){ %>
+  <li>
+    <a href="/employees/<%=employee._id%>"><%= employee.name %></a>:
+    <%=employee.role%>
+  </li>
+  <% } %> <% }) %>
+</ul>
+<a href="/employees/new"><button>Create a new employee</button></a>
+<a href="/"><button>Back to home</button></a>
+<% } %> <%- include("../partials/nav") %>
+<!-- </body>
+</html> -->
+
