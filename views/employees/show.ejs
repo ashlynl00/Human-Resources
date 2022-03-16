@@ -1,24 +1,34 @@
-<!-- <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="/style.css/" />
-    <title>Document</title>
-  </head>
-  <body> -->
-<%- include("../partials/nav") %>
-<h1>Name:<%= employee.name %></h1>
-<h3>Created by: <%= employee.user.username %></h3>
-<p>Age: <%= employee.age %></p>
-<p>Salary: <%= employee.salary %></p>
-<p>Role: <%= employee.role %></p>
-<a href="/employees/<%=employee._id%>/edit"><button>Edit</button></a>
-<form action="/employees/<%= employee._id %>?_method=DELETE" method="post">
-  <button type="submit">Delete <%= employee.name %>?</button>
-</form>
-<a href="/employees"><button>Go back to list of employees</button></a>
-<%- include("../partials/nav") %>
-<!-- </body>
-</html> -->
+
+<section class="column-center">
+  <div class="centerbox">
+    <table class="employeeEdit-table">
+      <tr>
+        <th>Name:</th>
+        <th>Created by:</th>
+        <th>Age:</th>
+        <th>Salary:</th>
+        <th>Role:</th>
+      </tr>
+      <tr>
+        <td><%= employee.name %></td>
+        <td><%= employee.user.username %></td>
+        <td><%= employee.age %></td>
+        <td><%= employee.salary %></td>
+        <td><%= employee.role %></td>
+      </tr>
+    </table>
+    <div>
+      <a href="/employees/<%=employee._id%>/edit"><button>Edit</button></a>
+
+      <form
+        action="/employees/<%= employee._id %>?_method=DELETE"
+        method="POST">
+        <button type="submit">Delete <%= employee.name %>?</button>
+      </form>
+
+    </div>
+  </div>
+  <%- include("../partials/nav") %>
+</section>
+
+

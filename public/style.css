@@ -1,6 +1,140 @@
-.nav-bar,
+*{
+  margin:0;
+  padding: 0;
+  font-family:'Roboto',sans-serif;
+  line-height: 1.5rem;
+}
+body {
+  background-color: #6d717e;
+}
+#welcomebanner{
+  padding: 6rem;
+  width: 5rem;
+  border-radius: 20rem;
+  background-image: url("../images/cloudPortrait.jpeg");
+}
+
+.navbar {
+  /* z-index: 10; */
+  /* position: fixed; */
+  /* top: 0; */
+  display: flex;
+  width: 100%;
+  height: 60px;
+  background: rgba(0,0,0,0.7);
+}
 .footer-bar {
   background-color: rgb(0, 140, 255);
   height: 20px;
   text-align: center;
+
 }
+
+.navbar ul {
+  display: flex;
+  list-style: none;
+  width: 100%;
+  justify-content: center;
+}
+
+.navbar ul li {
+  margin: 0 1rem;
+  padding: 1rem;
+}
+
+.navbar ul li a {
+  text-decoration: none;
+  text-transform: uppercase;
+  color: #f4f4f4;
+}
+
+.navbar ul li a:hover {
+  color:skyblue;
+}
+
+.centerbox {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-content: center;
+  text-align: center;
+  padding: 1rem;
+  gap: 1rem;
+  color: #fff;
+  background: rgb(85, 85, 85, .5);
+  height: 20rem;
+  width: 60vw;
+  background-image: url(https://images.unsplash.com/photo-1647292417350-3e612274f377?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1950&q=80);
+  background-position: center center;
+  border: none;
+  box-shadow: 1px 1px 40px rgb(111, 124, 136);
+}
+
+.column-center {
+  margin: 6rem;
+  display: grid;
+  justify-content: center;
+  align-content: center;
+  grid-auto-flow: row;
+}
+
+.border-button{
+  display:inline-block;
+  padding:0.5em 3em;
+  border:0.16em solid #FFFFFF;
+  margin:0 0.3em 0.3em 0;
+  box-sizing: border-box;
+  text-decoration:none;
+  text-transform:uppercase;
+  font-weight:400;
+  color:#FFFFFF;
+  text-align:center;
+  transition: all 0.15s;
+  }
+
+  .border-button:hover{
+  color:#DDDDDD;
+  border-color:#DDDDDD;
+  }
+
+  .border-button:active{
+  color:#BBBBBB;
+  border-color:#BBBBBB;
+  }
+
+  button {
+    color:white;
+    background-color: transparent;
+    background-repeat: no-repeat;
+    border: none;
+    cursor: pointer;
+    overflow: hidden;
+    outline: none;
+}
+input {
+  height: 1.5rem;
+}
+
+.employee-table, .user-table, .userAccount-table, .employeeEdit-table{
+  height: 60%;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  color: rgb(29, 29, 29);
+  background-color: rgb(255, 255, 255, .5);
+  text-align: left;
+  overflow-y: scroll;
+}
+
+ 
+
+a {
+  text-decoration: none;
+}
+th, td {
+  /* display: block; */
+  padding-inline: 1rem;
+  border: rgb(204, 4, 4);
+}
+
