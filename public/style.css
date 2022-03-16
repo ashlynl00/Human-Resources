@@ -7,6 +7,13 @@
 body {
   background-color: #6d717e;
 }
+#welcomebanner{
+  padding: 6rem;
+  width: 5rem;
+  border-radius: 20rem;
+  background-image: url("../images/cloudPortrait.jpeg");
+}
+
 .navbar {
   /* z-index: 10; */
   /* position: fixed; */

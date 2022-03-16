@@ -3,10 +3,11 @@
   <div class="centerbox">
     
     <% if(isLoggedIn){ %>
-    <h1>Welcome back <%= username %>!</h1>
-    <a class="border-button" href="/employees">View Employees</a>
-    <a class="border-button" href="/employees/new">Create New Employee</a>
-    <a class="border-button" href="/users/logout">Log Out</a>
+      <div id="welcomebanner">
+        <h1>Welcome back <%= username %>!</h1>
+      </div>
+   
+    
     <% } else { %>
       <div>
         <a class="border-button" href="/users/login">Please log in</a>
