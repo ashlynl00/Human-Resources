@@ -1,17 +1,23 @@
-<!-- <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-  </head>
-  <body> -->
-    <%- include("../partials/nav") %>
-    <h1><%=user.username%> Account</h1>
-    <h1>Company ID: <%=user.companyID%></h1>
-    <a href="/users/<%=user._id%>/edit"><button>Edit your profile</button></a>
-    <a href="/users/logout"><button>Logout</button></a>
-    <%- include("../partials/nav") %>
-  <!-- </body>
-</html> -->
+<%- include("../partials/nav") %>
+
+<section class="column-center">
+  <div class="centerbox">
+    <table class="userAccount-table">
+      <tr>
+        <th>Account</th>
+        <td><%=user.username%></td>
+        <th>ID</th>
+        <td><%=user._id%></td>
+        <th>Company ID</th>
+        <td><%=user.companyID%></td>
+      </tr>
+    </table>
+
+    <div>
+      <a href="/users/<%=user._id%>/edit"><button>Edit your profile</button></a>
+      <a href="/users/logout"><button>Logout</button></a>
+    </div>
+  </div>
+</section>
+
+<%- include("../partials/nav") %>

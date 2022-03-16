@@ -1,6 +1,96 @@
+*{
+  margin:0;
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+body {
+  background-color: #bbbbbb;
+}
 .nav-bar,
 .footer-bar {
   background-color: rgb(0, 140, 255);
   height: 20px;
   text-align: center;
 }
+.centerbox {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-content: center;
+  text-align: center;
+  padding: 1rem;
+  gap: 1rem;
+  color: #fff;
+  background: rgb(85, 85, 85, .5);
+  height: 20rem;
+  width: 20rem;
+  background-image: url(https://images.unsplash.com/photo-1647292417350-3e612274f377?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1950&q=80);
+  background-position: center center;
+  border: none;
+  box-shadow: 1px 1px 40px rgb(207, 233, 255);
+}
+
+.column-center {
+  margin: 6rem;
+  display: grid;
+  justify-content: center;
+  align-content: center;
+  grid-auto-flow: row;
+}
+
+.border-button{
+  display:inline-block;
+  padding:0.5em 3em;
+  border:0.16em solid #FFFFFF;
+  margin:0 0.3em 0.3em 0;
+  box-sizing: border-box;
+  text-decoration:none;
+  text-transform:uppercase;
+  font-family:'Roboto',sans-serif;
+  font-weight:400;
+  color:#FFFFFF;
+  text-align:center;
+  transition: all 0.15s;
+  }
+  button:hover{
+  color:#DDDDDD;
+  border-color:#DDDDDD;
+  }
+  button:active{
+  color:#BBBBBB;
+  border-color:#BBBBBB;
+  }
+
+  button {
+    color:white;
+    background-color: transparent;
+    background-repeat: no-repeat;
+    border: none;
+    cursor: pointer;
+    overflow: hidden;
+    outline: none;
+}
+input {
+  height: 1.5rem;
+}
+
+.employee-table, .user-table, .userAccount-table, .employeeEdit-table{
+  display: flex;
+  flex-wrap: wrap;
+  color: rgb(29, 29, 29);
+  background-color: rgb(255, 255, 255, .5);
+  text-align: left;
+  overflow-y: scroll;
+}
+
+ 
+
+a {
+  text-decoration: none;
+}
+th, td {
+  /* display: block; */
+  border: rgb(204, 4, 4);
+}
+
