@@ -1,4 +1,5 @@
-<%- include("../partials/nav") %> <% if(employees.length === 0) {%>
+
+<% if(employees.length === 0) {%>
 <h2>There are no employees yet!</h2>
 <a href="/employees/new">Create one now!</a>
 <a href="/employees/edit">Edit one now!</a>
@@ -6,7 +7,7 @@
 <% } else { %>
 <section class="column-center">
   <div class="centerbox">
-    <h1>List Of Employees</h1>
+    <h1>Employees</h1>
 
     <table class="employee-table">
       <tr>
@@ -20,12 +21,11 @@
         
         <td><%=employee.role%></td>
       </tr>
-      <% } %> <% }) %>
+      <% } %> <% }) %><% } %>
     </table>
 
-    <a href="/employees/new"><button>Create a new employee</button></a>
-    <a href="/"><button>Back to home</button></a>
   </div>
+  <%- include("../partials/nav") %>
 </section>
 
-<% } %> <%- include("../partials/nav") %>
+

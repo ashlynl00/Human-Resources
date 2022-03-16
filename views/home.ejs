@@ -1,16 +1,21 @@
-<%- include("partials/nav") %>
+
 <section class="column-center">
   <div class="centerbox">
+    
     <% if(isLoggedIn){ %>
     <h1>Welcome back <%= username %>!</h1>
-    <a class="border-button" href="/users/logout">Log Out</a>
     <a class="border-button" href="/employees">View Employees</a>
     <a class="border-button" href="/employees/new">Create New Employee</a>
+    <a class="border-button" href="/users/logout">Log Out</a>
     <% } else { %>
-    <a class="border-button" href="/users/login">Please log in</a>
-    <a class="border-button" href="/users/new">Create an account</a>
+      <div>
+        <a class="border-button" href="/users/login">Please log in</a>
+        <p>or</p>
+        <a class="border-button" href="/users/new">Create an account</a>
+      </div>
+    
     <% } %>
   </div>
+  <%- include("partials/nav") %>
 </section>
 
-<%- include("partials/footer") %>

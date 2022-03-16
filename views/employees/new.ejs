@@ -1,8 +1,7 @@
-<%- include("../partials/nav") %>
 
 <section class="column-center">
   <div class="centerbox">
-    <h1>Employee FACTORY</h1>
+    <h1>Create A New Profile</h1>
     <form action="/employees" method="post">
       <input type="text" name="name" placeholder="Name" /><br />
       <input type="number" name="age" placeholder="Age" /><br />
@@ -16,8 +15,8 @@
       /><br />
       <button type="submit">Submit</button>
     </form>
-    <a href="/employees"><button>Go back to list of employees</button></a>
   </div>
+  <%- include("../partials/nav") %>
 </section>
 
-<%- include("../partials/nav") %>
+
