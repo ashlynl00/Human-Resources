@@ -7,17 +7,17 @@
 body {
   background-color: #6d717e;
 }
-#welcomebanner{
+/* #welcomebanner{
   padding: 6rem;
   width: 5rem;
   border-radius: 20rem;
   background-image: url("../images/cloudPortrait.jpeg");
-}
+} */
 
 .navbar {
-  /* z-index: 10; */
-  /* position: fixed; */
-  /* top: 0; */
+  z-index: 10;
+  position: fixed;
+  top: 0;
   display: flex;
   width: 100%;
   height: 60px;
