@@ -86,18 +86,24 @@ router.post('/', async (req, res)=>{
 // SHOW THE FORM TO EDIT A USER
 router.get('/:id/edit', async (req, res)=>{
     try{
-        if(req.session.userId === req.params.id){
-            const user = await User.findById(req.params.id)
-            res.render('users/edit.ejs', {
-                user: user
-            })
-        }else{
-            throw new Error("You're NOT THAT USER!")
-        }
+        const user = await User.findById(req.params.id)
+        res.render('users/edit.ejs', {
+            user: user
+        })
     }catch(err){
         res.sendStatus(500)
     }
 })
+// router.get('/:id/edit', async (req, res)=>{
+//     try{
+//         const employee = await Employee.findById(req.params.id)
+//         res.render('employees/edit.ejs', {
+//             employee: employee
+//         })
+//     }catch(err){
+//         res.sendStatus(500)
+//     }
+// })
 
 // UPDATE: PUT
 // /users/:id
