@@ -178,6 +178,13 @@ hr {
   margin-bottom: 20px;
 }
 
+#form-link {
+  color: white;
+}
+
+#form-link:hover {
+  color: black;
+}
 
 @media screen and (max-width: 700px) {
   #else-homepage {
