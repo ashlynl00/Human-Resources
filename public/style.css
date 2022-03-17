@@ -178,6 +178,17 @@ hr {
   margin-bottom: 20px;
 }
 
+#form-link {
+  color: white;
+}
+
+#form-link:hover {
+  color: black;
+}
+
+#create-employee-btn {
+  margin: 0 auto;
+}
 
 @media screen and (max-width: 700px) {
   #else-homepage {
