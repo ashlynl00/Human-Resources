@@ -1,13 +1,13 @@
 *{
   margin:0;
   padding: 0;
-  font-family:'Roboto',sans-serif;
   line-height: 1.5rem;
 }
 body {
   background-image: url("./images/pexels-matheus-viana-2414036.jpg");
   background-size: cover;
   background-position: center;
+  font-family: 'Merriweather', serif;
   background-repeat: no-repeat;
 }
 #nav-divs{
@@ -41,7 +41,7 @@ a:hover{
   justify-content: space-evenly;
   align-content: center;
   text-align: center;
-  padding: 1rem;
+  padding: 2rem;
   gap: 1rem;
   color: #fff;
   background: rgb(85, 85, 85, .5);
@@ -76,6 +76,7 @@ a:hover{
   color:#FFFFFF;
   text-align:center;
   transition: all 0.15s;
+  width: 100%;
   }
 
   .border-button:hover{
@@ -99,6 +100,7 @@ a:hover{
 }
 input {
   height: 1.5rem;
+  width: 200px;
 }
 
 .user-table, .userAccount-table, .employeeEdit-table{
@@ -157,4 +159,37 @@ hr {
   transform: scale(1.1);
   background-color: white;
   color: black;
+}
+
+#else-homepage {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+
+#message {
+  width: 40%;
+  margin-right: 10px;
+  text-align: left;
+  font-family: 'Abel', sans-serif;
+}
+#message h2 {
+  margin-bottom: 20px;
+}
+
+
+@media screen and (max-width: 700px) {
+  #else-homepage {
+    display: flex;
+    flex-direction: column;
+  }
+  #message {
+    padding-bottom: 15px;
+    margin: 0;
+    width: 200px;
+  }
+  .centerbox {
+    height: 400px;
+  }
 }
