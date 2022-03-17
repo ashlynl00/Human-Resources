@@ -5,48 +5,15 @@
   line-height: 1.5rem;
 }
 body {
-  background-image: url("./images/pexels-edmond-dantÃ¨s-4344860.jpg");
+  background-image: url("./images/pexels-matheus-viana-2414036.jpg");
   background-size: cover;
   background-position: center;
+  background-repeat: no-repeat;
 }
-/* #welcomebanner{
-  padding: 6rem;
-  width: 5rem;
-  border-radius: 20rem;
-  background-image: url("../images/cloudPortrait.jpeg");
-} */
-/* .navbar {
-  z-index: 10;
-  position: fixed;
-  top: 0;
-  display: flex;
-  width: 100%;
-  height: 60px;
-  background: rgba(0,0,0,0.7);
-} */
-/* .navbar ul {
-  display: flex;
-  list-style: none;
-  width: 100%;
-  justify-content: center;
-}
-.navbar ul li {
-  margin: 0 1rem;
-  padding: 1rem;
-}
-.navbar ul li a {
-  text-decoration: none;
-  text-transform: uppercase;
-  color: #f4f4f4;
-}
-.navbar ul li a:hover {
-  color:skyblue;
-} */
 #nav-divs{
   display: flex;
   justify-content: space-around;
   color: white;
-  font-family: 'Roboto', sans-serif;
   border-bottom: 1px solid black;
   margin-bottom: 10px;
   height: 60px;
@@ -54,23 +21,22 @@ body {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   align-items: center;
 }
-a{
+#nav-divs a{
   color: whitesmoke;
+}
+a{
   cursor: grab;
+  text-decoration: none;
+  
 }
 a:hover{
-  color: black;
+  text-decoration: underline;
 }
 
-.footer-bar {
-  background-color: rgb(0, 140, 255);
-  height: 20px;
-  text-align: center;
-
-}
 .centerbox {
   display: flex;
-  flex-wrap: wrap;
+  /* flex-wrap: wrap; */
+  /* overflow: auto; */
   flex-direction: column;
   justify-content: space-evenly;
   align-content: center;
@@ -81,11 +47,13 @@ a:hover{
   background: rgb(85, 85, 85, .5);
   height: 20rem;
   width: 60vw;
-  background-color: black;
-  opacity: .8;
+  background: rgba(0,0,0,0.7);
+  opacity: 1;
   background-position: center center;
   border: none;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  padding: 50px;
+  
 }
 
 .column-center {
@@ -133,7 +101,7 @@ input {
   height: 1.5rem;
 }
 
-.employee-table, .user-table, .userAccount-table, .employeeEdit-table{
+.user-table, .userAccount-table, .employeeEdit-table{
   height: 60%;
   width: 100%;
   display: flex;
@@ -143,16 +111,38 @@ input {
   text-align: left;
   overflow-y: scroll;
 }
-
- 
-
-a {
-  text-decoration: none;
+.employee-table{
+  background-color: white;
+  height: 60%;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  color: rgb(29, 29, 29);
+  text-align: left;
+  overflow-y: scroll;
 }
+
 th, td {
   /* display: block; */
   padding-inline: 1rem;
   border: rgb(204, 4, 4);
+}
+.footer {
+  align-items: center;
+  background-color: #2B2D2E;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  height: 60px;
+  justify-content: center;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+hr {
+  border: 1px solid rgba(255,255,255,0.2);
+  /* margin-bottom: 40px; */
+  width: 95%;
 }
 
 .button {
