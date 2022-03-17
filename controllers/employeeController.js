@@ -2,6 +2,12 @@ const Employee = require("../models/employee")
 const User = require('../models/user');
 const express = require('express');
 const router = express.Router();
+
+///to serve files ie pdfs
+const path = require("path");
+const fs = require("fs");
+// const dirPath = path.join(__dirname, "public/pdfs");
+
 // INDEX: GET
 // /cats
 // Gives a page displaying all the cats
@@ -22,6 +28,22 @@ router.get('/', async (req, res)=>{
         res.render('employees/index.ejs')
     }
 })
+
+///to interact with pdfs
+const files = fs.readdirSync('public/pdfs').map(name => {
+    return {
+      name: path.basename(name, ".pdf"),
+      url: `/pdfs/${name}`
+    };
+  });
+
+///for the forms tab
+router.get('/forms', async (req, res)=>{
+    res.render("forms.ejs", {files})
+})
+
+
+
 // NEW: GET
 // /cats/new
 // Shows a form to create a new cat
@@ -88,5 +110,7 @@ router.delete('/:id', async (req, res)=>{
         res.sendStatus(500)
     }
 })
+
+
 
 module.exports = router;

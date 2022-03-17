@@ -1,0 +1,18 @@
+<%- include("partials/nav") %>
+
+<section class="column-center">
+  <div class="centerbox">
+    <h1>Forms</h1>
+    <ul>
+      <% files.map(file => { %>
+        <li>
+          <a href="<%= file.url %>"><%= file.name %> Employees Compensation</a>
+        </li>
+      <% }) %>
+    </ul>
+  </div>
+</section>
+
+
+
+
