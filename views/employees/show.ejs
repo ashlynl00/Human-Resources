@@ -23,13 +23,17 @@
       <form
         action="/employees/<%= employee._id %>?_method=DELETE"
         method="POST">
-        <button type="submit">Delete <%= employee.name %>?</button>
+        <button type="submit" class="button">Delete <%= employee.name %>?</button>
       </form>
+
+
+      
 
     </div>
   </div>
   
 </section>
+<%- include("../partials/footer") %>
 
 
 

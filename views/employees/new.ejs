@@ -1,23 +1,32 @@
 <%- include("../partials/nav") %>
 <section class="column-center">
   <div class="centerbox">
-    <h1>Create A New Profile</h1>
+    <h1>Create A New Employee Profile</h1>
     <form action="/employees" method="post">
-      <input type="text" name="name" placeholder="Name" /><br />
+      <label for="Name">First Name</label><br/>
+      <input type="text" name="name" placeholder="First Name" /><br/>
+      <label for="Name">Last Name</label><br/>
+      <input type="text" name="lastname" placeholder="Last Name" /><br/>
+      <label for="Name">Age</label><br/>
       <input type="number" name="age" placeholder="Age" /><br />
+      <label for="Name">Role</label><br/>
       <input type="text" name="role" placeholder="Role" /><br />
+      <label for="Name">Salary</label><br/>
       <input type="number" name="salary" placeholder="Salary" /><br />
+      <label for="Name">Company ID</label><br/>
       <input
         type="number"
         name="companyID"
         value="<%=currentUser.companyID%>"
         placeholder="Company ID"
+        readonly="readonly"
       /><br />
-      <button type="submit">Submit</button>
+      <button type="submit" class="button">Submit</button>
     </form>
   </div>
   
 </section>
+<%- include("../partials/footer") %>
 
 
 
