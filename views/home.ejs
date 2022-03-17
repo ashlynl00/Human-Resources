@@ -1,7 +1,6 @@
 <%- include("partials/nav") %>
 <section class="column-center">
   <div class="centerbox">
-    <h2>A place to store employee data for an easier experience</h2>
     <% if(isLoggedIn){ %>
       <div id="welcomebanner">
         <h1>Welcome back <%= username %>!</h1>
@@ -9,12 +8,17 @@
    
     
     <% } else { %>
+    <div id="else-homepage">
+      <div id="message">
+          <h2>HR Software to make your paperwork easier.</h2>
+          <h4>HRStar makes it easy to store all hr and employee data all in one place.</h4>
+      </div>
       <div>
         <a class="border-button" href="/users/login">Please log in</a>
         <p>or</p>
         <a class="border-button" href="/users/new">Create an account</a>
       </div>
-    
+    </div> 
     <% } %>
   </div>
   
