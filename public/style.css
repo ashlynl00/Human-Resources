@@ -4,7 +4,9 @@
   line-height: 1.5rem;
 }
 body {
-  background-image: url("./images/pexels-matheus-viana-2414036.jpg");
+  /* background-image: url("./images/pexels-matheus-viana-2414036.jpg"); */
+
+  background-image: url("https://files.slack.com/files-pri/T0351JZQ0-F037Y5PJQ4R/logo.png");
   background-size: cover;
   background-position: center;
   font-family: 'Merriweather', serif;
@@ -192,4 +194,7 @@ hr {
   .centerbox {
     height: 400px;
   }
+}
+.fileSubmitted {
+  background-color: green;
 }

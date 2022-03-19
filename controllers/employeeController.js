@@ -39,7 +39,9 @@ const files = fs.readdirSync('public/pdfs').map(name => {
 
 ///for the forms tab
 router.get('/forms', async (req, res)=>{
-    res.render("forms.ejs", {files})
+   
+        res.render("forms.ejs", {files})
+
 })
 
 

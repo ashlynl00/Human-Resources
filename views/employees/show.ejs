@@ -8,6 +8,7 @@
         <th>Age:</th>
         <th>Salary:</th>
         <th>Role:</th>
+        <th>On File:</th>
       </tr>
       <tr>
         <td><%= employee.name %></td>
@@ -15,8 +16,10 @@
         <td><%= employee.age %></td>
         <td><%= employee.salary %></td>
         <td><%= employee.role %></td>
+        <td><%= employee.files%></td>
       </tr>
     </table>
+    <%- include("../partials/employeePaperwork") %>
     <div>
       <a href="/employees/<%=employee._id%>/edit"><button>Edit</button></a>
 
@@ -25,14 +28,14 @@
         method="POST">
         <button type="submit" class="button">Delete <%= employee.name %>?</button>
       </form>
-
-
       
-
+    
     </div>
   </div>
   
+  
 </section>
+
 <%- include("../partials/footer") %>
 
 

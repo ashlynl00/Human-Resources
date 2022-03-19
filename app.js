@@ -13,7 +13,14 @@ const store = new MongoDBStore({
 require('./db-utils/connect')
 const employeeController = require('./controllers/employeeController')
 const userController = require('./controllers/userController')
-app.use(express.static("public"))
+
+//static resources
+const path = require('path')
+// app.use('/static', express.static(path.join(__dirname, '/public2')))
+// app.use('/static', express.static(path.join(__dirname, '/public')))
+
+
+
 app.use(methodOverride('_method'))
 app.use(require('./middleware/logger'))
 const isLoggedIn = require('./middleware/isLoggedIn')
@@ -46,7 +53,11 @@ app.use('/employees', isLoggedIn, employeeController)
 app.use('/users', userController)
 
 
-app.use(express.static("public"));
+// app.use(express.static("public"));
+//static resources
+app.use(express.static(path.join(__dirname + '/public')))
+app.use(express.static(path.join(__dirname + '/public2')))
+
 
 const port = process.env.PORT || 3000;
 app.listen(port, () => {

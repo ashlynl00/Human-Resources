@@ -1,7 +1,10 @@
 <%- include("../partials/nav") %>
 
+
+
 <section class="column-center">
   <div class="centerbox">
+    <%- include("../partials/logo") %>
   
     <% if(employees.length === 0) {%>
       <h2>There are no employees yet!</h2>
@@ -23,11 +26,13 @@
         <td><%=employee.role%></td>
       </tr>
       <% } %> <% }) %><% } %>
+
     </table>
 
   </div>
   
 </section>
+
 
 
 <%- include("../partials/footer") %>
