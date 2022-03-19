@@ -24,7 +24,11 @@
               <h3><a href="/employees/forms" id="forms-link">Forms</a></h3>
           </div>
           <div>
+            <% if (isLoggedIn) { %>
               <h3><a href="/users/logout">Logout</a></h3>
+            <% } else {%>
+              <h3><a href="/users/login">Login</a></h3>
+            <% } %>
           </div>
       </nav>
   </section>
