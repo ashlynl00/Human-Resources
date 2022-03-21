@@ -9,8 +9,8 @@ const fs = require("fs");
 // const dirPath = path.join(__dirname, "public/pdfs");
 
 // INDEX: GET
-// /cats
-// Gives a page displaying all the cats
+// /employees
+// Gives a page displaying all the employees
 router.get('/', async (req, res)=>{
     if(!req.session.visits){
         req.session.visits = 1;
@@ -45,8 +45,8 @@ router.get('/forms', async (req, res)=>{
 
 
 // NEW: GET
-// /cats/new
-// Shows a form to create a new cat
+// /employees/new
+// Shows a form to create a new employee
 router.get('/new', async (req, res)=>{
     const currentUser = await User.findById(req.session.userId)
     res.render('employees/new.ejs', {
@@ -55,8 +55,8 @@ router.get('/new', async (req, res)=>{
 })
 
 // SHOW: GET
-// /cats/:id
-// Shows a page displaying one cat
+// /employees/:id
+// Shows a page displaying one employee
 router.get('/:id', async (req, res)=>{
     const employee = await Employee.findById(req.params.id).populate('user')
     res.render("employees/show.ejs", {
@@ -65,8 +65,8 @@ router.get('/:id', async (req, res)=>{
 })
 
 // CREATE: POST
-// /cats
-// Creates an actual cat, then...?
+// /employees
+// Creates an actual employee, then...?
 router.post('/', async (req, res)=>{
     req.body.user = req.session.userId
     const newEmployee = await Employee.create(req.body);
@@ -75,8 +75,8 @@ router.post('/', async (req, res)=>{
 })
 
 // EDIT: GET
-// /cats/:id/edit
-// SHOW THE FORM TO EDIT A CAT
+// /employees/:id/edit
+// SHOW THE FORM TO EDIT A EMPLOYEE
 router.get('/:id/edit', async (req, res)=>{
     try{
         const employee = await Employee.findById(req.params.id)
@@ -89,8 +89,8 @@ router.get('/:id/edit', async (req, res)=>{
 })
 
 // UPDATE: PUT
-// /cats/:id
-// UPDATE THE CAT WITH THE SPECIFIC ID
+// /employees/:id
+// UPDATE THE EMPLOYEE WITH THE SPECIFIC ID
 router.put('/:id', async (req, res)=>{
    try{
         await Employee.findByIdAndUpdate(req.params.id, req.body)
@@ -100,8 +100,8 @@ router.put('/:id', async (req, res)=>{
    }
 })
 // DELETE: DELETE
-// /cats/:id
-// DELETE THE CAT WITH THE SPECIFIC ID
+// /employees/:id
+// DELETE THE EMPLOYEE WITH THE SPECIFIC ID
 router.delete('/:id', async (req, res)=>{
     try{
         await Employee.findByIdAndDelete(req.params.id)
