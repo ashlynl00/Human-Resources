@@ -1,19 +1,23 @@
 <%- include("../partials/nav") %>
-<section class="column-center">
-  <div class="centerbox">
-    <h2>Edit Account</h2>
-    <h1><%=user.username%></h1>
-    <form action="/users/<%=user._id%>?_method=PUT" method="POST">
-      <input type="text" name="companyID" value="<%=user.companyID%>" />
-      <button type="submit">Submit</button>
-    </form>
+<div class="content flow">
 
-    <div>
-      <a href="/users"><button>Home</button></a>
-      <a href="/users/new"><button>New</button></a>
-      <a href="/users/logout"><button>Logout</button></a>
-    </div>
+  <div class="title-box">
+    <h1 class="title">Edit <%=user.username%></h1>
   </div>
-</section>
+
+  <div class="grid">
+    <div class="col">
+      <span class="material-icons-outlined" style="font-size: 5rem;">
+       account_circle
+      </span>
+      <form action="/users/<%=user._id%>?_method=PUT" method="POST">
+        <label for="username">Username</label>
+        <input type="text" name="username" value="<%=user.username%> "><br>
+        <label for="companyID">companyID</label>
+        <input type="text" name="companyID" value="<%=user.companyID%>"/><br>
+        <button type="submit">Submit</button>
+      </form>
+  </div>
+</div>
 
 <%- include("../partials/footer") %>

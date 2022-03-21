@@ -1,29 +1,34 @@
-<%- include("partials/nav") %>
-<section class="column-center">
-  <div class="centerbox">
-    <% if(isLoggedIn){ %>
-      <div id="welcomebanner">
-        <h1>Welcome back <%= username %>!</h1>
-      </div>
+<%- include("partials/logo") %> 
+
+<% if(isLoggedIn){ %>
+  <%-include ("partials/nav")  %> 
+  <div class="content">
+    <div class="title-box">
+      <h1 class="title">Welcome back <%= username %>!</h1>
+    </div>
    
-    
-    <% } else { %>
-    <div id="else-homepage">
-      <div id="message">
-          <h2>HR Software to make your paperwork easier.</h2>
-          <h4>HRStar makes it easy to store all hr and employee data all in one place.</h4>
-      </div>
-      <div>
-        <a class="border-button" href="/users/login">Please log in</a>
-        <p>or</p>
-        <a class="border-button" href="/users/new">Create an account</a>
-      </div>
-    </div> 
-    <% } %>
   </div>
   
-</section>
-<%- include("partials/footer") %>
 
+  <% } else { %>
+    
+      <div class="content flow">
 
+        <div class="title-box">
+          <h1 class="title">HR Software to make your paperwork easier.</h1>
+        </div>  
+        <div class="grid">
+          <div class="col">
+            <p>HRStar makes it easy to store all hr and employee data all in one place.</p>
+          </div>
+          <div class="col">
+          <a href="/users/login">Please log in</a>
+          <p>or</p>
+          <a href="/users/new">Create an account</a>
+          </div>
+        </div>
+      </div>
+    </div>
 
+  
+<% } %> <%- include("partials/footer") %>

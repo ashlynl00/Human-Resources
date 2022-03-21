@@ -1,37 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="/style.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Abel&family=Merriweather&display=swap" rel="stylesheet">
-    <title>Document</title>
-    <section id="nav-bar">
-      <nav id="nav-divs">
-          <div>
-              <h3><a href="/">Account Home</a></h3>
-          </div>
-          <div>
-              <h3><a href="/employees" >Employee List</a></h3>
-          </div>
-          <div>
-              <h3><a href="/employees/new">Create New Employee</a></h3>
-          </div>
-          <div>
-              <h3><a href="/employees/forms" id="forms-link">Forms</a></h3>
-          </div>
-          <div>
-            <% if (isLoggedIn) { %>
-              <h3><a href="/users/logout">Logout</a></h3>
-            <% } else {%>
-              <h3><a href="/users/login">Login</a></h3>
-            <% } %>
-          </div>
+<head>
+<meta charset="UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="stylesheet" href="/style.css" />
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet"/>
+
+<title>Document</title>
+</head>
+<div class="header">
+  <a class="hrStar" href="/">HR *"<br />STAR</a>
+</div>
+
+<section class="content flow">
+    <div class="nav-box">
+      <nav >
+        <p><a href="/">Account Home</a></p>
+        <p><a href="/employees" >Employee List</a></p>
+        <p><a href="/employees/new">New Employee</a></p>
+        <p><a href="/employees/forms" id="forms-link">Forms</a></p>
+        <p><a href="/users/new">New User</a></p>
+        <p><a href="/users">Users</a></p>
+         <% if (isLoggedIn) { %>
+        <p><a href="/users/logout">Logout</a></p>
+        <% } else {%>
+        <p><a href="/users/login">Login</a></p>
+         <% } %>
       </nav>
-  </section>
-  </head>
+    </div>
+  </div>
+  
+  
+</section>
   
 </html>

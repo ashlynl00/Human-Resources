@@ -16,9 +16,6 @@ const userController = require('./controllers/userController')
 
 //static resources
 const path = require('path')
-// app.use('/static', express.static(path.join(__dirname, '/public2')))
-// app.use('/static', express.static(path.join(__dirname, '/public')))
-
 
 
 app.use(methodOverride('_method'))
@@ -57,6 +54,10 @@ app.use('/users', userController)
 //static resources
 app.use(express.static(path.join(__dirname + '/public')))
 app.use(express.static(path.join(__dirname + '/public2')))
+
+
+
+
 
 
 const port = process.env.PORT || 3000;

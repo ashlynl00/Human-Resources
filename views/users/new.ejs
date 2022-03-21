@@ -1,16 +1,23 @@
 <%- include("../partials/nav") %>
-<section class="column-center">
-  <div class="centerbox">
-    <h1>New User Registration</h1>
-    <form action="/users" method="POST">
-      <input type="text" name="username" placeholder="Username" required />
-      <input type="password" name="password" placeholder="Password" />
-      <input type="text" name="companyID" placeholder="Company ID" />
-      <br /><br />
-      <button type="submit" class="button">Register</button>
-    </form>
+
+<div class="content flow">
+
+  <div class="title-box">
+    <h1 class="title">New User</h1>
   </div>
   
-</section>
+  
+  <div class="grid">
+    <div class="col">
+      <form action="/users" method="POST">
+        <input type="text" name="username" placeholder="Username" required/><br>
+        <input type="password" name="password" placeholder="Password"/><br>
+        <input type="text" name="companyID" placeholder="Company ID"/><br>
+        <button type="submit" class="button">Register</button>
+      </form>
+    </div>
+  </div>
+  
+</div>
 
 <%- include("../partials/footer") %>

@@ -1,23 +1,33 @@
 <%- include("../partials/nav") %>
 
-<section class="column-center">
-  <div class="centerbox">
-    <table class="userAccount-table">
-      <tr>
-        <th>Account</th>
-        <td><%=user.username%></td>
-        <th>ID</th>
-        <td><%=user._id%></td>
-        <th>Company ID</th>
-        <td><%=user.companyID%></td>
-      </tr>
-    </table>
+<div class="content flow">
 
-    <div>
-      <a href="/users/<%=user._id%>/edit" class="button"><button>Edit your profile</button></a>
-      <a href="/users/logout" class="button"><button>Logout</button></a>
-    </div>
+  <div class="title-box">
+    <h1 class="title">Profile: <%=user.username%> </h1>
   </div>
-</section>
+
+  <div class="grid">
+    <div class="col">
+      <span class="material-icons-outlined" style="font-size: 5rem;">
+        account_circle
+      </span>
+      <div class="employeeBasicInfo">
+        <p>Account: <%=user.username%></p>
+          <p>ID: <%=user._id%></p>
+          <p>Company ID: <%=user.companyID%></p>
+      </div>
+      <div>
+        <a href="/users/<%=user._id%>/edit" class="button"><button>Edit</button></a>
+      </div>
+    </div>
+    
+
+
+  
+  
+      
+  
+
+
 
 <%- include("../partials/footer") %>

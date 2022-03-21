@@ -1,15 +1,23 @@
+<%- include ("./partials/logo.ejs")  %> 
 
-<section class="column-center">
-  <div class="centerbox">
-    <h1>Login</h1>
-    <form action="/users/login" method="POST">
-      <input type="text" name="username" placeholder="Username" required />
-      <br /><br />
-      <input type="password" name="password" placeholder="Password" />
-      <br /><br />
-      <button type="submit" class="button">Login</button>
-    </form>
-    <a href="/users/new"><button class="button">Create an account</button></a>
+<div class="content">
+  <div class="title-box">
+    <h1 class="title" >Login</h1>
   </div>
-</section>
+
+  <div class="grid">
+    <div class="col">
+      <form action="/users/login" method="POST">
+        <input type="text" name="username" placeholder="Username" required />
+        <br />
+        <input type="password" name="password" placeholder="Password" />
+        <br />
+        <button type="submit" class="button">Login</button>
+        <a href="/users/new"><button class="button">Create an account</button></a>
+      </form>
+    </div>
+  </div>
+
+</div>
+
 <%- include("./partials/footer") %>

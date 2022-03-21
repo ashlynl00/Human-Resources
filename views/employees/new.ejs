@@ -1,32 +1,31 @@
 <%- include("../partials/nav") %>
-<section class="column-center">
-  <div class="centerbox">
-    <h1>Create A New Employee Profile</h1>
-    <form action="/employees" method="post">
-      <label for="Name">First Name</label><br/>
-      <input type="text" name="name" placeholder="First Name" /><br/>
-      <label for="Name">Last Name</label><br/>
-      <input type="text" name="lastname" placeholder="Last Name" /><br/>
-      <label for="Name">Age</label><br/>
-      <input type="number" name="age" placeholder="Age" /><br />
-      <label for="Name">Role</label><br/>
-      <input type="text" name="role" placeholder="Role" /><br />
-      <label for="Name">Salary</label><br/>
-      <input type="number" name="salary" placeholder="Salary" /><br />
-      <label for="Name">Company ID</label><br/>
-      <input
-        type="number"
-        name="companyID"
-        value="<%=currentUser.companyID%>"
-        placeholder="Company ID"
-        readonly="readonly"
-      /><br />
-      <button type="submit" class="button">Submit</button>
-    </form>
+
+<div class="content flow">
+  <div class="title-box">
+    <h1 class="title">New Employee</h1>
   </div>
   
-</section>
+  <div class="grid">
+
+    <div class="col">
+      <form action="/employees" method="post">
+        <!-- <label for="name">First</label> -->
+        <input type="text" name="name" placeholder="First"/><br>
+        <!-- <label for="lastname">Last</label> -->
+        <input type="text" name="lastname" placeholder="Last"/><br>
+        <!-- <label for="age">Age</label> -->
+        <input type="number" name="age" placeholder="Age"/><br>
+        <!-- <label for="role">Role</label> -->
+        <input type="text" name="role" placeholder="Role"/><br>
+        <!-- <label for="salary">Salary</label> -->
+        <input type="number" name="salary" placeholder="Salary"/><br>
+        <!-- <label for="companyID">Company ID</label> -->
+        <input type="number" name="companyID" value="<%=currentUser.companyID%>" placeholder="Company ID" readonly="readonly"/><br>
+        <button type="submit" class="button">Submit</button>
+     </form>
+    </div>
+
+  </div>
+</div>
+
 <%- include("../partials/footer") %>
-
-
-

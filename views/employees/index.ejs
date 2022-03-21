@@ -1,41 +1,51 @@
-<%- include("../partials/nav") %>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=0.86, maximum-scale=5.0, minimum-scale=0.86" />
+    <title>Document</title>
+    <link rel="stylesheet" href="/style.css" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet"/>
+  </head>
+  <body>
+    <%- include("../partials/nav") %> 
+    
+    <div class="content flow">
+      <div class="title-box">
+        <h1 class="title">Company <%=companyID%></h1>
+      </div>
+      <div class="grid">
+        <% if(employees.length === 0) {%>
+        <h2>There are no employees yet!</h2>
+        <a href="/employees/new" class="button" id="create-employee-btn"
+          ><button>Create one now!</button></a>
+          <% } else { %> 
+            <% employees.forEach((employee)=>{ %> 
+            <% if(employee.user== userId){ %>
+              <div class="col Employee">
+                <span class="material-icons-outlined" style="font-size: 5rem;">
+                  account_circle
+                </span>
+                <a href="/employees/<%=employee._id%>">
+                <div class="employeeBasicInfo">
+                    <p><%= employee.name %></p>
+                    <p><%= employee.lastname %></p>
+                    <p><%= employee.role %></p>
+                    <p>Company <%=companyID%></p>
+                </div>
+                </a>
+              </div>
+            
+               
+            <% } %>
+          <% }) %>
+        <% } %>
 
-
-
-<section class="column-center">
-  <div class="centerbox">
-    <%- include("../partials/logo") %>
-  
-    <% if(employees.length === 0) {%>
-      <h2>There are no employees yet!</h2>
-      <a href="/employees/new" class="button" id="create-employee-btn"><button>Create one now!</button></a>
-      
-      <% } else { %>
-    <h1>Employees</h1>
-
-    <table class="employee-table">
-      <tr>
-        <th>Name</th>
-        <th>Role</th>
-      </tr>
-      <tr>
-        <% employees.forEach((employee)=>{ %> <% if(employee.user == userId){ %>
-
-        <td><a href="/employees/<%=employee._id%>"><%= employee.name %></a></td>
-        
-        <td><%=employee.role%></td>
-      </tr>
-      <% } %> <% }) %><% } %>
-
-    </table>
-
-  </div>
-  
-</section>
-
-
-
-<%- include("../partials/footer") %>
-
-
-
+      </div>
+    </div>
+    <%- include("../partials/footer") %>
+  </body>
+</html>

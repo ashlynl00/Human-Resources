@@ -1,17 +1,22 @@
 <%- include("partials/nav") %>
 
-<section class="column-center">
-  <div class="centerbox">
-    <h1>Forms</h1>
-    <ul>
-      <% files.map(file => { %>
-        <li>
-          <a href="<%= file.url %>" target="_blank" id="form-link"><%= file.name %> Employees Compensation</a>
-        </li>
-      <% }) %>
-    </ul>
+
+
+<div class="content flow">
+  <div class="title-box">
+    <h1 class="title">Forms</h1>
   </div>
-</section>
+  <div class="grid">
+    <div class="col">
+      <ul>
+        <% files.map(file => { %>
+        <li><a href="<%= file.url %>" target="_blank" id="form-link"><%= file.name %> Employees Compensation</a></li>
+            <% }) %>
+      </ul>
+    </div>
+  </div>
+</div>
+
 <%- include("./partials/footer") %>
 
 

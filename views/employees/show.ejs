@@ -1,39 +1,33 @@
 <%- include("../partials/nav") %>
-<section class="column-center">
-  <div class="centerbox">
-    <table class="employeeEdit-table">
-      <tr>
-        <th>Name:</th>
-        <th>Created by:</th>
-        <th>Age:</th>
-        <th>Salary:</th>
-        <th>Role:</th>
-        <th>On File:</th>
-      </tr>
-      <tr>
-        <td><%= employee.name %></td>
-        <td><%= employee.user.username %></td>
-        <td><%= employee.age %></td>
-        <td><%= employee.salary %></td>
-        <td><%= employee.role %></td>
-        <td><%= employee.files%></td>
-      </tr>
-    </table>
-    <div>
-      <a href="/employees/<%=employee._id%>/edit"><button>Edit</button></a>
 
-      <form
-        action="/employees/<%= employee._id %>?_method=DELETE"
-        method="POST">
-        <button type="submit" class="button">Delete <%= employee.name %>?</button>
+<div class="content">
+  <div>
+
+    <div class="col Employee"  >
+      <span class="material-icons-outlined" style="font-size: 5rem;">
+        account_circle
+      </span>
+      <div class="employeeBasicInfo">
+          <p>Name:<%= employee.name %></p>
+          <p>Created by:<%= employee.user.username %></p>
+          <p>Age:<%= employee.age %></p>
+          <p>Salary:<%= employee.salary %></p>
+          <p>Role:<%= employee.role %></p>
+          <p>On File:<%= employee.files%></p>
+          <p>Employed Since:<%= `${employee._id.getTimestamp()}`%></p>
+      </div>
+    </div>
+          
+    <div style="text-align:right;">
+      <a href="/employees/<%=employee._id%>/edit" ><button>Edit</button></a>
+      <form action="/employees/<%= employee._id %>?_method=DELETE" method="POST" style="text-align: left;">
+        <button type="submit" class="button" style="color: red;">Delete <%= employee.name %></button>
       </form>
       
-    
     </div>
+    
   </div>
-  
-  
-</section>
+</div>
 
 <%- include("../partials/footer") %>
 

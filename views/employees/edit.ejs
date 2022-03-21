@@ -1,42 +1,62 @@
 <%- include("../partials/nav") %>
-<section class="column-center">
-  <div class="centerbox">
-    <h2>
-      Edit <%=employee.name%> <br />
-      ID: <%=employee._id%>
-    </h2>
-    <form action="/employees/<%=employee._id%>?_method=PUT" method="POST">
-      <input
-        type="text"
-        name="name"
-        value="<%=employee.name%>"
-        placeholder="Name"
-        required
-      />
-      <input
-        type="number"
-        name="age"
-        value="<%=employee.age%>"
-        placeholder="Age"
-      />
-      <input
-        type="text"
-        name="role"
-        value="<%=employee.role%>"
-        placeholder="Role"
-      />
-      <input
-        type="number"
-        name="salary"
-        value="<%=employee.salary%>"
-        placeholder="Salary"
-      />
-      <br />
-      <button type="submit" class="button">Submit</button>
-    </form>
+
+<div class="content flow">
+
+  <div class="title-box">
+    <h1 class="title">Edit <%=employee.name%> <%= employee.lastname %> </h1>
   </div>
-  
-</section>
+
+  <div class="grid">
+    <div class="col">
+     
+      <form action="/employees/<%=employee._id%>?_method=PUT" method="POST">
+        <input
+          type="text"
+          name="name"
+          value="<%=employee.name%>"
+          placeholder="Name"
+          required
+        /><br>
+        <input
+          type="text"
+          name="lastname"
+          value="<%=employee.lastname%>"
+          placeholder="Name"
+          required
+        /><br>
+        <input
+          type="number"
+          name="age"
+          value="<%=employee.age%>"
+          placeholder="Age"
+        /><br>
+        <input
+          type="text"
+          name="role"
+          value="<%=employee.role%>"
+          placeholder="Role"
+        /><br>
+        <input
+          type="number"
+          name="salary"
+          value="<%=employee.salary%>"
+          placeholder="Salary"
+        /><br>
+        <button type="submit" class="button">Submit</button>
+      </form>
+      <form action="/employees/<%=employee._id%>?_method=PUT" method="POST">
+        <span class="material-icons-outlined" style="font-size: 5rem;">
+          account_circle
+        </span>
+        <button type="submit" class="button">Edit</button>
+      </form>
+      
+
+    </div>
+  </div>
+</div>
+    
+
 <%- include("../partials/footer") %>
 
 

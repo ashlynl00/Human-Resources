@@ -7,6 +7,8 @@ const router = express.Router();
 const path = require("path");
 const fs = require("fs");
 // const dirPath = path.join(__dirname, "public/pdfs");
+//enables reading (parsing) HTTP-POST data.
+
 
 // INDEX: GET
 // /cats
@@ -43,8 +45,6 @@ router.get('/forms', async (req, res)=>{
         res.render("forms.ejs", {files})
 
 })
-
-
 
 // NEW: GET
 // /cats/new

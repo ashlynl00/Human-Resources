@@ -1,32 +1,26 @@
 <%- include("../partials/nav") %>
 
-<section class="column-center">
-  <div class="centerbox">
-    <h2>Registered Users</h2>
+<div class="content flow">
 
-    <table class="user-table">
-      <tr>
-        <th>User</th>
-        <th>ID</th>
-      </tr>
-      <tr>
-        <% users.forEach((user)=>{ %>
-        <td><a href="/users/<%=user._id%>"><%= user.username %></a></td>
-        <td><%=user._id%></td>
-      </tr>
-      <% }) %>
-    </table>
-
-    <form action="/users">
-      <input type="text" name="username" />
-      <button type="submit" class="button">User Lookup</button>
-    </form>
-
-    <div>
-      <a href="/users/index" class="button"><button>Home</button></a>
-      <a href="/users/new" class="button"><button>New</button></a>
-    </div>
+  <div class="title-box">
+    <h1 class="title">User Accounts</h1>
   </div>
-</section>
 
+   
+  <div class="grid">
+    <% users.forEach((user)=>{ %>
+    <div class="col">
+      <span class="material-icons-outlined" style="font-size: 5rem;">
+        account_circle
+      </span>
+      <a href="/users/<%=user._id%>">
+        <p><%= user.username %></p>
+        <p><%= user._id%></p>
+      </a>
+    </div>
+    <% }) %>
+  </div>
+  
+</div>
+  
 <%- include("../partials/footer") %>
